@@ -3,15 +3,17 @@ using VietNamTourism.Authorization.Roles;
 using VietNamTourism.Authorization.Users;
 using VietNamTourism.MultiTenancy;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace VietNamTourism.EntityFrameworkCore;
 
 public class VietNamTourismDbContext : AbpZeroDbContext<Tenant, Role, User, VietNamTourismDbContext>
 {
-    /* Define a DbSet for each entity of the application */
+	/* Define a DbSet for each entity of the application */
 
-    public VietNamTourismDbContext(DbContextOptions<VietNamTourismDbContext> options)
-        : base(options)
-    {
-    }
+	public VietNamTourismDbContext(DbContextOptions<VietNamTourismDbContext> options)
+			: base(options)
+	{
+		AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+	}
 }

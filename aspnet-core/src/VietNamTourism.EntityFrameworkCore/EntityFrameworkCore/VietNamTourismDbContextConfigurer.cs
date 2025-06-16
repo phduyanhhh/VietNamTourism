@@ -5,13 +5,13 @@ namespace VietNamTourism.EntityFrameworkCore;
 
 public static class VietNamTourismDbContextConfigurer
 {
-    public static void Configure(DbContextOptionsBuilder<VietNamTourismDbContext> builder, string connectionString)
-    {
-        builder.UseSqlServer(connectionString);
-    }
+	public static void Configure(DbContextOptionsBuilder<VietNamTourismDbContext> builder, string connectionString)
+	{
+		builder.UseNpgsql(connectionString, x => x.UseNetTopologySuite());
+	}
 
-    public static void Configure(DbContextOptionsBuilder<VietNamTourismDbContext> builder, DbConnection connection)
-    {
-        builder.UseSqlServer(connection);
-    }
+	public static void Configure(DbContextOptionsBuilder<VietNamTourismDbContext> builder, DbConnection connection)
+	{
+		builder.UseNpgsql(connection, x => x.UseNetTopologySuite());
+	}
 }
