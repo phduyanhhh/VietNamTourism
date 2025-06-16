@@ -23,9 +23,9 @@ public class VietNamTourismNavigationProvider : NavigationProvider
             )
             .AddItem(
                 new MenuItemDefinition(
-                    PageNames.Home,
-                    L("HomePage"),
-                    url: "",
+                    PageNames.Dashboard,
+                    L("Dashboard"),
+                    url: "/Tms/Dashboard",
                     icon: "fas fa-home",
                     requiresAuthentication: true
                 )
