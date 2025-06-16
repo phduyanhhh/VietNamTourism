@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NetTopologySuite.Geometries;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -12,9 +13,11 @@ using VietNamTourism.EntityFrameworkCore;
 namespace VietNamTourism.Migrations
 {
     [DbContext(typeof(VietNamTourismDbContext))]
-    partial class VietNamTourismDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250616034054_Initial-db-administrative")]
+    partial class Initialdbadministrative
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
