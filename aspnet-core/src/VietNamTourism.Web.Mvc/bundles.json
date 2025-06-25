@@ -29,6 +29,7 @@
         "node_modules/jquery/dist/jquery.js",
 
         "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+        "node_modules/admin-lte/dist/js/adminlte.js",
         "node_modules/datatables.net/js/dataTables.min.js",
         "wwwroot/Common/helpers.js",
         "wwwroot/Common/datatables.ajax.js",
@@ -37,7 +38,6 @@
         "node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js",
         "node_modules/datatables.net-buttons/js/dataTables.buttons.js",
         "node_modules/datatables.net-buttons-bs4/js/buttons.bootstrap4.js",
-        "node_modules/admin-lte/dist/js/adminlte.js",
 
         "node_modules/jquery-blockui/jquery.blockUI.js",
         "node_modules/spin.js/spin.js",
@@ -60,6 +60,8 @@
         "node_modules/push.js/bin/push.js",
 
         "wwwroot/js/abp.dataTable.js",
+        "wwwroot/Common/ResourceLoader.js",
+        "wwwroot/Common/ModalManager.js",
         "wwwroot/js/main.js"
       ]
     },
@@ -72,11 +74,11 @@
     },
     {
       "output": "view-resources/Views/_Bundles/datatables.ajax.min.js",
-      "input": ["wwwroot/Common/datatables.ajax.js"]
+      "input": [ "wwwroot/Common/datatables.ajax.js" ]
     },
     {
       "output": "view-resources/Views/_Bundles/helpers.min.js",
-      "input": ["wwwroot/Common/helpers.js"]
+      "input": [ "wwwroot/Common/helpers.js" ]
     }
   ],
   "styles": [
@@ -111,7 +113,7 @@
   "scriptMappings": [
     {
       "outputFolder": "libs/moment-timezone",
-      "input": ["node_modules/moment-timezone/*.js"]
+      "input": [ "node_modules/moment-timezone/*.js" ]
     }
   ]
 }

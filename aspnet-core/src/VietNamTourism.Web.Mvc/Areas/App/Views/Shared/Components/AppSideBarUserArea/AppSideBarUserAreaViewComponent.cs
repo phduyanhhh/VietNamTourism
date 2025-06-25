@@ -6,12 +6,12 @@ using VietNamTourism.Web.Views;
 
 namespace VietNamTourism.Web.Areas.App.Views.Shared.Components.AppSideBarUserArea
 {
-	public class AppSideBarUserAreaComponent : VietNamTourismViewComponent 
+	public class AppSideBarUserAreaViewComponent : VietNamTourismViewComponent 
 	{
 		private readonly ISessionAppService _sessionAppService;
 		private readonly IMultiTenancyConfig _multiTenancyConfig;
 
-		public AppSideBarUserAreaComponent(
+		public AppSideBarUserAreaViewComponent(
 						ISessionAppService sessionAppService,
 						IMultiTenancyConfig multiTenancyConfig)
 		{
@@ -26,7 +26,8 @@ namespace VietNamTourism.Web.Areas.App.Views.Shared.Components.AppSideBarUserAre
 				LoginInformations = await _sessionAppService.GetCurrentLoginInformations(),
 				IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled,
 			};
-			return View(model);
+			//return View(model);
+			return View("~/Areas/App/Views/Shared/Components/AppSideBarUserArea/Default.cshtml", model);
 		}
 	}
 }

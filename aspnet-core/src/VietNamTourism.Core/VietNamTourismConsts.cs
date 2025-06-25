@@ -12,6 +12,9 @@ public class VietNamTourismConsts
 
 	public const string DefaultSchema = "TourismDB";
 
+	public const string AppAdminMenuName = "Administrations";
+
+
 	// Entity
 
 	public const int MaxNameLength = 256;

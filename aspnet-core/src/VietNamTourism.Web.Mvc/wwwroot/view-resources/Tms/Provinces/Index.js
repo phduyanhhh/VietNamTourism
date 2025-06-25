@@ -1,0 +1,15 @@
+﻿(function ($) {
+
+	var _createModal = new app.ModalManager({
+		viewUrl: abp.appPath + 'Tms/Provinces/CreateModal',
+		scriptUrl: abp.appPath + 'view-resources/Tms/Provinces/_CreateModal.js',
+		modalClass: 'ProvincesCreateModal',
+		modalType: 'modal-xl'
+	});
+
+	$('#ProvinceCreateModal').on('click', function () {
+		//alert("duyanh");
+		_createModal.open();
+	});
+	
+})(jQuery);
