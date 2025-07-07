@@ -8,13 +8,10 @@ using VietNamTourism.Entities;
 
 namespace VietNamTourism.Services.ProvincesAppService.Dto
 {
-	public class CreateProvinceDto
+	public class EditProvinceDto
 	{
-		[Required]
-		[StringLength(VietNamTourismConsts.MaxNameLength, MinimumLength = VietNamTourismConsts.MinNameLength)]
+		public int Id { get; set; }
 		public string Name { get; set; }
-		[Required]
-		[StringLength(VietNamTourismConsts.MaxNameLength, MinimumLength = VietNamTourismConsts.MinNameLength)]
 		public string DisplayName { get; set; }
 		public string? Description { get; set; }
 		public string? Code { get; set; } // Ví dụ: mã tỉnh (VD: 11 - Điện Biên)

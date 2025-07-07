@@ -1,24 +1,25 @@
 ﻿var app = app || {};
 (function () {
-  app.htmlUtils = {
-    htmlEncodeText: function (value) {
-      return $("<div/>").text(value).html();
-    },
 
-    htmlDecodeText: function (value) {
-      return $("<div/>").html(value).text();
-    },
+	app.htmlUtils = {
+		htmlEncodeText: function (value) {
+			return $("<div/>").text(value).html();
+		},
 
-    htmlEncodeJson: function (jsonObject) {
-      return JSON.parse(
-        app.htmlUtils.htmlEncodeText(JSON.stringify(jsonObject)),
-      );
-    },
+		htmlDecodeText: function (value) {
+			return $("<div/>").html(value).text();
+		},
 
-    htmlDecodeJson: function (jsonObject) {
-      return JSON.parse(
-        app.htmlUtils.htmlDecodeText(JSON.stringify(jsonObject)),
-      );
-    },
-  };
+		htmlEncodeJson: function (jsonObject) {
+			return JSON.parse(
+				app.htmlUtils.htmlEncodeText(JSON.stringify(jsonObject)),
+			);
+		},
+
+		htmlDecodeJson: function (jsonObject) {
+			return JSON.parse(
+				app.htmlUtils.htmlDecodeText(JSON.stringify(jsonObject)),
+			);
+		},
+	};
 })();

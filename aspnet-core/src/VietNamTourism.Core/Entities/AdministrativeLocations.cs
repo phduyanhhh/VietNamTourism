@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using NetTopologySuite.Geometries;
 
 namespace VietNamTourism.Entities
 {
 	[Table("AdministrativeLocations", Schema = VietNamTourismConsts.DefaultSchema)]
-	public class AdministrativeLocations : Entity<int>
+	public class AdministrativeLocations : FullAuditedEntity<int>
 	{
 		public Point Location { get; set; }
 		public Geometry? Boundary { get; set; }

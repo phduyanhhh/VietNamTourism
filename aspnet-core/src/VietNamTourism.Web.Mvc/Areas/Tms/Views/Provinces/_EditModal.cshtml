@@ -1,0 +1,58 @@
+﻿@using VietNamTourism.Web.Areas.App.Models.Common.Modals
+@using VietNamTourism.Web.Areas.Tms.Models.Provinces
+@model ProvincesViewModal
+@{
+	Layout = null;
+}
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("EditProvinces")))
+
+<div class="modal-body">
+	<form name="ProvincesEditForm" id="ProvincesEditForm">
+		<div class="mb-3">
+			<input id="Id" class="form-control " type="text"
+						 value="@Model.Province.Id"
+						 name="Id" required maxlength="256" hidden />
+		</div>
+		<div class="mb-3">
+			<label for="Name" class="form-label label text-secondary">@L("Name") </label><span class="text-danger">*</span>
+			<input id="Name" class="form-control " type="text"
+						 value="@Model.Province.Name"
+						 name="Name" required maxlength="256"
+						 placeholder="@L("InputNameProvince")">
+		</div>
+		<div class="mb-3">
+			<label for="DisplayName" class="form-label label text-secondary">@L("DisplayName") </label><span class="text-danger">*</span>
+			<input id="DisplayName" class="form-control date-picker" type="text"
+						 value="@Model.Province.DisplayName"
+						 name="DisplayName" required
+						 autocomplete="off"
+						 placeholder="@L("InputDisplayNameProvince")">
+		</div>
+		<div class="mb-3">
+			<label for="CodeProvince" class="form-label label text-secondary">@L("CodeProvince") </label>
+			<input id="CodeProvince" class="form-control" type="text"
+						 value="@Model.Province.Code"
+						 name="CodeProvince"
+						 autocomplete="off"
+						 placeholder="@L("InputCodeProvince")">
+		</div>
+		<div class="mb-3">
+			<label for="Description" class="form-label label text-secondary">@L("Description") </label>
+			<input id="Description" class="form-control" type="text"
+						 value="@Model.Province.Description"
+						 name="Description"
+						 autocomplete="off"
+						 placeholder="@L("InputDescription")">
+		</div>
+		<div class="mb-3">
+			<label for="Region" class="form-label label text-secondary">@L("Region") </label><span class="text-danger">*</span>
+			<select id="Region" name="Province.Region" class="form-control" asp-for="Province.Region" asp-items="ViewBag.RegionList">
+				<option value="">-- @L("SelectRegion") --</option>
+			</select>
+		</div>
+	</form>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+

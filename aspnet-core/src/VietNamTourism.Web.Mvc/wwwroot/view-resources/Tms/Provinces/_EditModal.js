@@ -1,12 +1,13 @@
-(function ($) {
-	app.modals.ProvincesCreateModal = function () {
+﻿(function ($) {
+	app.modals.ProvincesEditModal = function () {
 		var _modalManager;
 		var _$form = null;
 		var _provinceAppService = abp.services.app.provinces;
-		_$table = $("#ProvincesTable");
-		this.init = function(modalManager) {
+		var _$table = $("#ProvincesTable");
+		this.init = function (modalManager) {
 			_modalManager = modalManager;
-			_$form = _modalManager.getModal().find('#ProvincesCreateForm');
+
+			_$form = _modalManager.getModal().find('#ProvincesEditForm');
 
 			_$form.validate({
 				rules: {
@@ -37,10 +38,11 @@
 
 			this.save = function () {
 				if (!_$form.valid()) {
-					return; 
+					return;
 				}
-				_$form = _modalManager.getModal().find('#ProvincesCreateForm');
+				_$form = _modalManager.getModal().find('#ProvincesEditForm');
 				var dataInput = {};
+				dataInput.Id = $("#Id").val();
 				dataInput.Name = $("#Name").val();
 				dataInput.DisplayName = $("#DisplayName").val();
 				dataInput.Code = $("#CodeProvince").val();
@@ -50,9 +52,8 @@
 				abp.ui.setBusy(_modalManager.getModal());
 
 				_provinceAppService
-					.create(dataInput)
+					.editProvince(dataInput)
 					.done(function (result) {
-						//abp.notify.info(abp.localization.localize("SavedSuccessfully"), "VietNamTourism");
 						abp.notify.info(abp.localization.localize("SavedSuccessfully"), "VietNamTourism");
 						_modalManager.close();
 						_$table.DataTable().ajax.reload();

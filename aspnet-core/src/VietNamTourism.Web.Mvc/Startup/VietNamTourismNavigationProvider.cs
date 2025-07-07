@@ -70,6 +70,14 @@ public class VietNamTourismNavigationProvider : NavigationProvider
 								icon: "fas fa-users",
 								permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users)
 							)
+						).AddItem(
+							new MenuItemDefinition(
+								PageNames.Languages,
+								L("Languages"),
+								url: "Languages",
+								icon: "fas fa-language",
+								permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users)
+							)
 						)
 				);
 

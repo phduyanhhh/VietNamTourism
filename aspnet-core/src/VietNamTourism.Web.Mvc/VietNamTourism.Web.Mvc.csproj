@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\App\Controllers\" />
-    <Folder Include="Areas\Tms\Models\" />
     <Folder Include="wwwroot\view-resources\App\Models\" />
     <Folder Include="wwwroot\view-resources\App\Views\" />
   </ItemGroup>

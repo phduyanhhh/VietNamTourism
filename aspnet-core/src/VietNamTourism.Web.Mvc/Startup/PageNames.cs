@@ -10,6 +10,7 @@ public class PageNames
 	public const string Tenants = "Tenants";
 	public const string Users = "Users";
 	public const string Roles = "Roles";
+	public const string Languages = "Languages";
 
 	public const string Dashboard = "Dashboard";
 

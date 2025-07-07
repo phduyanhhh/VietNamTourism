@@ -4,5 +4,11 @@
     "inputFiles": [
       "wwwroot/view-resources/Tms/Provinces/Index.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/css/style.min.css",
+    "inputFiles": [
+      "wwwroot/css/style.css"
+    ]
   }
 ]

@@ -3,6 +3,7 @@
 		var _modalManager;
 		var _$form = null;
 		var _provinceAppService = abp.services.app.provinces;
+		_$table = $("#ProvincesTable");
 		this.init = function(modalManager) {
 			_modalManager = modalManager;
 			_$form = _modalManager.getModal().find('#ProvincesCreateForm');
@@ -31,12 +32,13 @@
 				errorClass: "text-danger",
 				errorPlacement: function (error, element) {
 					error.insertAfter(element);
-				},
-				submitHandler: function (form) {
 				}
 			})
 
 			this.save = function () {
+				if (!_$form.valid()) {
+					return; 
+				}
 				_$form = _modalManager.getModal().find('#ProvincesCreateForm');
 				var dataInput = {};
 				dataInput.Name = $("#Name").val();
@@ -50,8 +52,10 @@
 				_provinceAppService
 					.create(dataInput)
 					.done(function (result) {
+						//abp.notify.info(abp.localization.localize("SavedSuccessfully"), "VietNamTourism");
 						abp.notify.info(abp.localization.localize("SavedSuccessfully"), "VietNamTourism");
 						_modalManager.close();
+						_$table.DataTable().ajax.reload();
 					})
 					.always(function () {
 						abp.ui.clearBusy(_modalManager.getModal());

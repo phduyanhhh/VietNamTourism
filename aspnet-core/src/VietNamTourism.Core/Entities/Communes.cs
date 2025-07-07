@@ -6,11 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 
 namespace VietNamTourism.Entities
 {
 	[Table("Communes", Schema = VietNamTourismConsts.DefaultSchema)]
-	public class Communes : Entity<int>
+	public class Communes : FullAuditedEntity<int>
 	{
 		[Required]
 		[StringLength(VietNamTourismConsts.MaxNameLength, MinimumLength = VietNamTourismConsts.MinNameLength)]
